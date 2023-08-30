@@ -1,0 +1,25 @@
+
+
+
+<ng-container *ngIf="todoArray.length > 0 else para">
+    <p *ngFor="let s of todoArray" class="alert alert-info d-flex justify-content-between" >
+        {{s.todoItem}}
+        <span>
+            <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                <mat-icon>edit</mat-icon>
+              </button>  
+              <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                <mat-icon  (click)="onDelete(s.todoId)" >delete</mat-icon>
+              </button>  
+        
+
+        </span>
+        
+      </p>
+    
+</ng-container>
+
+
+<ng-template #para >
+ <p class="alert alert-danger"> No Todo Added</p>  
+</ng-template>
